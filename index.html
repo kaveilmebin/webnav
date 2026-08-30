@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>专用导航</title>
+<meta name="description" content="专用导航" />
+<meta name="keywords" content="专用导航" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="icon" href="images/110036_973.png" type="image/png" />
+<script type="text/javascript">
+        var bodyBgs = [];
+        bodyBgs[0] = "images/bg1.jpg";
+        bodyBgs[1] = "images/bg2.jpg";
+        bodyBgs[2] = "images/bg3.jpg";
+        bodyBgs[3] = "images/bg4.jpg";
+        bodyBgs[4] = "images/bg5.jpg";
+        bodyBgs[5] = "images/bg6.jpg";
+        bodyBgs[6] = "images/bg7.jpg";
+        var randomBgIndex = Math.round( Math.random() * 6 );
+        document.write('<style>.main{background:url(' + bodyBgs[randomBgIndex] + ') no-repeat; background-size: cover,100%;}</style>');
+</script>
+</head>
+<body>
+	<div id="wrap">
+        <div id="container" class="main">
+        	<div class="topnav"></div>
+            <!-- 搜索模块 -->
+            <div id="search">
+                <form target="_blank" action="" method="get" class="clear">
+                    <div class="engine">
+                        <a class="name" href="javascript:;">
+                            百度<span></span>
+                        </a>
+                        <div class="list">
+                            <a href="#" class="baidu active" data-name="baidu"><span></span>百度</a>
+                            <a href="#" class="google" data-name="google"><span></span>谷歌</a>
+                            <a href="#" class="sougou" data-name="sougou"><span></span>搜狗</a>
+                            <a href="#" class="taobao" data-name="taobao"><span></span>淘宝</a>
+                        </div>
+                    </div>
+                    <input type="search" name="q" id="s" />
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <ul class="toplist">
+            	<li><a href="https://www.guihualianpian.cn/">鬼话连篇</a></li>
+            	<li><a href="https://tophub.today/">今日热榜</a></li>
+                <li><a href="https://ikuuu.win/user#">iKuuu VPN</a></li>
+                <li><a href="https://www.zhihu.com/parker/campaign/1973810231403364726?zh_hide_nav_bar=true">知乎提问积分</a></li>
+                <li><a href="https://www.palewinds.com/autokey/home?dashboard">知乎返稿链接</a></li>
+                <li><a href="随机取名.html">随机起名</a></li>
+                <li><a href="https://gushitong.baidu.com/?quotationMarket=ab&moduleName=quotation">股市行情</a></li>
+            </ul>
+        </div>
+
+        <!-- 导航模块 -->
+        <div class="link-main">
+            <div class="link-panel">
+                <div class="panel-heading">
+                    <b>工具</b>
+                </div>
+                <ul class="tile">
+                    <li><a href="http://map.baidu.com/"><img src="images/icon/baidumap.ico"><h3>百度地图</h3>浏览地图、搜索地点、查询公交驾车线路、查看实时路况，您的出行指南、生活助手。</a></li>
+                    <li><a href="http://fanyi.baidu.com/translate"><img src="images/icon/baidufanyi.ico"><h3>百度翻译</h3>百度翻译提供即时免费的多语种文本翻译和网页翻译服务，支持中、英、日、韩、泰、法、西、德等28种热门语言互译，覆盖756个翻译方向。</a></li>
+                    <li><a href="https://translate.google.cn/"><img src="images/icon/googlefanyi.png"><h3>Google翻译</h3>Google 的免费翻译服务可提供简体中文和另外 100 多种语言之间的互译功能，可让您即时翻译字词、短语和网页内容。</a></li>
+                    <li><a href="https://cn.office-converter.com/"><img src="images/icon/office.png"><h3>Office Converter</h3>免费在线文件格式转换器，提供众多文档、音频、视频、图片的格式转换。</a></li>
+		            <li><a href="http://www.docpe.com/excel/excel-to-html.aspx"><img src="images/icon/docpe.ico"><h3>档铺</h3>Excel转Html、图片转文字、PDF转换等诸多功能。</a></li>
+		            <li><a href="https://www.sojson.com/"><img src="images/icon/json.webp"><h3>JSON解析</h3>JSON在线解析及格式化验证</a></li>
+                    <li><a href="https://www.css-js.com/tools/base64.html"><img src="images/icon/icon64.png"><h3>CSS.JS</h3>前端文件在线转换，图片转Base64，Unicode 编码&解码。</a></li>
+                    <li><a href="https://bigjpg.com/"><img src="images/icon/bigjpg.ico"><h3>Bigjpg</h3>AI人工智能图片放大</a></li>
+					<li><a href="https://arc.tencent.com/zh/ai-demos/faceRestoration"><img src="images/icon/arc.ico"><h3>腾讯ARC官网</h3>图片放大，比上面那个好些</a></li>
+                    <li><a href="https://app.xunjiepdf.com/"><img src="images/icon/xunjie.png"><h3>迅捷在线转换器</h3>音频转文字、PDF转成Word在线转换器。</a></li>
+                    <li><a href="https://greasyfork.org/zh-CN/"><img src="images/icon/greasyfork.png"><h3>Greasy Fork</h3>提供油猴插件脚本下载。</a></li>
+                    <li><a href="https://tool.lu/urlconvert/"><img src="images/icon/tool.png"><h3>下载链接转换</h3>支持迅雷,快车,旋风的下载地址互转</a></li>
+                    <li><a href="https://www.processon.com/"><img src="images/icon/processon.ico"><h3>ProcessOn</h3>在线创作流程图、思维导图。</a></li>
+                    <li><a href="https://www.xiaomengai.com/"><img src="images/icon/caiyun.png"><h3>彩云小梦</h3>AI续写，小说创作，平行世界。</a></li>
+                    <li><a href="https://yiyan.baidu.com/"><img src="images/icon/wxyy.png"><h3>文心一言</h3>百度全新一代知识增强大语言模型。</a></li>
+                    <li><a href="https://www.doubao.com/chat/"><img src="images/icon/doubao.webp"><h3>豆包</h3>字节跳动旗下 AI 智能助手</a></li>
+                    <li><a href="https://chat.deepseek.com/"><img src="images/icon/deepseek.ico"><h3>DeepSeek</h3>深度求索（DeepSeek）助力编程代码开发、创意写作、文件处理等任务，支持文件上传及长文本对话，随时为您提供高效的AI支持。</a></li>
+                    <li><a href="https://yuanbao.tencent.com/"><img src="images/icon/hunyuan.svg"><h3>腾讯元宝</h3>腾讯元宝是基于腾讯混元大模型的AI应用，可以帮你写作绘画文案翻译编程搜索阅读总结的全能助手</a></li>
+                    <li><a href="https://www.tongyi.com/qianwen"><img src="images/icon/qwen.png"><h3>千问</h3>千问是阿里通义千问大模型打造的AI对话助手，通义千问支持问答、写作、代码、翻译、录音、PPT创作、文档处理、音视频速读。</a></li>
+                    <li><a href="https://gemini.google.com/app"><img src="images/icon/gemini.svg"><h3>Google Gemini</h3>Google 旗下的AI助理。在写作、规划和开展头脑风暴等方面获得帮助。体验生成式AI的强大功能。</a></li>
+                    <li><a href="https://chatgpt.com/"><img src="images/icon/chatgpt.png"><h3>ChatGPT</h3>ChatGPT 是一款供日常使用的AI聊天机器人。与最先进的AI模型互动，探索创意、解决问题以及提升学习效率。</a></li>
+                    <li><a href="https://www.liblib.art/"><img src="images/icon/liblib.ico"><h3>哩布哩布AI</h3>原创AI模型分享社区，这里有最新、最热门的模型素材，10万+模型免费下载。欢迎每一位创作者加入，分享你的作品。与中国原创模型作者交流,共同探索AI绘画。</a></li>
+                    <li><a href="https://jimeng.jianying.com/"><img src="images/icon/dreamina-v5.ico"><h3>即梦AI</h3>一站式AI创作平台</a></li>
+                    <li><a href="https://labnana.com/"><img src="images/icon/labnana.jpg"><h3>Labnana</h3>LabnanaAI</a></li>
+                </ul>
+            </div>
+
+ 			<div class="link-panel">
+                <div class="panel-heading">
+                    <b>素材</b>
+                </div>
+                <ul class="tile">
+                    <li><a href="http://v3.bootcss.com/css/"><img src="images/icon/Bootstrap.png"><h3>Bootstrap中文网</h3>简洁、直观、强悍、移动设备优先的前端开发框架，让web开发更迅速、简单。</a></li>
+                    <li><a href="http://588ku.com/"><img src="images/icon/qianku.png"><h3>千库网</h3>PNG免扣图，素材模版下载</a></li>
+                    <li><a href="http://www.freeuid.com/"><img src="images/icon/freeuid.png"><h3>freeuid</h3>免费UI资源下载</a></li>
+		            <li><a href="http://www.iconfont.cn"><img src="images/icon/iconfont.ico"><h3>阿里巴巴icon</h3>阿里巴巴矢量图标库</a></li>
+                    <li><a href="http://www.aigei.com/"><img src="images/icon/aigei.png"><h3>爱给网</h3>中国最大的数字娱乐免费素材下载网站，免费提供免费的音效配乐</a></li>
+                    <li><a href="http://www.element3ds.com/plugin.php?id=autologin&sid=xbbu3m"><img src="images/icon/weiyuansu.png"><h3>微元素</h3>游戏资源下载,游戏原画,手机游戏资源,游戏开发资源</a></li>
+                    <li><a href="https://www.pinterest.com/"><img src="images/icon/pinterest.png"><h3>pinterest</h3>网络图片采集、灵感收集，需要挂VPN</a></li>
+                    <li><a href="http://huaban.com/"><img src="images/icon/huaban.png"><h3>花瓣网</h3>采集、发现网络上你喜欢的事物。你可以用它收集灵感,保存有用的素材。</a></li>
+                    <li><a href="https://www.artstation.com/"><img src="images/icon/artstation.png"><h3>ArtStation</h3>ArtStation是艺术家展示其艺术作品的平台,特别适合对游戏行业、电影和娱乐感兴趣的创意人士。 </a></li>
+                    <li><a href="https://www.gameui.net/"><img src="images/icon/gameui.webp"><h3>GAMEUI</h3>GAMEUI是一个游戏UI/UX设计师交流平台，专为热爱游戏UI设计的你倾力打造。</a></li>
+                    <li><a href="http://www.zcool.com.cn/"><img src="images/icon/zhanku.ico"><h3>站酷</h3>中国设计师互动平台。深耕设计领域十二年，站酷聚集了650万设计师、摄影师、插画师、艺术家、创意人，设计创意群体中具有较高的影响力与号召力。</a></li>
+                    <li><a href="http://www.shufami.com/"><img src="images/icon/shufami.ico"><h3>书法迷</h3>1673位书法家书法字体在线生成</a></li>
+                    <li><a href="http://www.qiuziti.com/"><img src="images/icon/qiuziti.png"><h3>求字体</h3>免费提供上传图片找字体、字体实时预览及字体下载服务</a></li>
+                    <li><a href="http://so.uigreat.com/"><img src="images/icon/so_uigreat_com.ico"><h3>UI设计师导航网</h3>优阁UI设计师网址导航专注分享优秀设计网站、免费无版权限制可商用的高品质素材，UI设计教程、尺寸规范、配色方案、设计素材和灵感</a></li>
+                    <li><a href="https://www.maoken.com/"><img src="images/icon/maoken.ico"><h3>猫啃网</h3>猫啃网致力于与大家分享无版权问题的免费商用字体信息，欢迎大家常来逛逛。</a></li>
+                </ul>
+            </div>
+
+            <div class="link-panel">
+                <div class="panel-heading">
+                    <b>娱乐</b>
+                </div>
+                <ul class="tile">
+                    <li><a href="http://www.acfun.cn/"><img src="images/icon/acfun.ico"><h3>AcFun</h3>AcFun是一家弹幕视频网站，致力于为每一个人带来欢乐。</a></li>
+                    <li><a href="https://www.bilibili.com/"><img src="images/icon/bilibili.ico"><h3>Bilibili</h3>bilibili是国内知名的视频弹幕网站，这里有最及时的动漫新番，最棒的ACG氛围，最有创意的Up主。大家可以在这里找到许多欢乐。</a></li>
+                    <li><a href="https://www.jiligamefun.com/"><img src="images/icon/jiligame.png"><h3>叽哩叽哩游戏网</h3>ACG资源下载，pixiv图集下载，单机游戏下载，单机游戏资讯等精彩内容</a></li>
+                    <li><a href="http://www.hanfuhui.cn/"><img src="images/icon/hanfuhui.ico"><h3>汉服荟</h3>汉服荟是一个以汉服同袍为中心的垂直社区，可以分享汉服日常,发布汉服摄影,怎么区分山寨,汉服怎么穿,快来与同袍们一起开启汉式生活吧</a></li>
+					<li><a href="http://ciyuandao.com"><img src="images/icon/ciyuandao.ico"><h3>次元岛</h3>一站式Cosplay作品发布平台。</a></li>
+                    <li><a href="https://weibo.com/236088435"><img src="images/icon/weibo.ico"><h3>新浪微博</h3>随时随地发现新鲜事！微博带你欣赏世界上每一个精彩瞬间，了解每一个幕后故事。</a></li>
+                    <li><a href="https://www.zhihu.com/"><img src="images/icon/zhihu.png"><h3>知乎</h3>有问题，上知乎。知乎，分享你新编的故事。</a></li>
+                    <li><a href="https://www.xiaohongshu.com/"><img src="images/icon/xhs.png"><h3>小红书</h3>3亿人的生活经验，都在小红书</a></li>
+                    <li><a href="http://www.txtnovel.vip/"><img src="images/icon/txtnovel.ico"><h3>书香门第</h3>TXT小说下载基地。用户名:loyo1</a></li>
+                    <li><a href="http://www.gamersky.com/pcgame/"><img src="images/icon/pcgame.png"><h3>游民星空</h3>游民星空提供提供大量单机游戏攻略秘籍内容，以及特色的看点游戏资讯内容。</a></li>
+                    <li><a href="http://www.3dmgame.com/"><img src="images/icon/3dm.png"><h3>3DM</h3>3DM游戏网为玩家提供最新的游戏新闻、攻略、单机游戏资源、汉化资源、游戏补丁、游戏论坛等</a></li>
+                    <li><a href="https://flingtrainer.com/"><img src="images/icon/fling.jpg"><h3>风灵月影</h3>风灵月影修改器官网，需要使用英文名称搜索</a></li>
+		            <li><a href="http://5sing.kugou.com/index.html"><img src="images/icon/5sing.png"><h3>5sing</h3>中国原创音乐基地</a></li>
+                    <li><a href="https://www.52pojie.cn/"><img src="images/icon/52pojie.ico"><h3>吾爱破解</h3>安卓app破解、软件破解、病毒分析。</a></li>
+                    <li><a href="https://www.meijutt.tv/"><img src="images/icon/mjtt.png"><h3>美剧天堂</h3>海量好看的美剧在线观看、最新美剧下载！</a></li>
+					<li><a href="https://xl01.com.de//"><img src="images/icon/yjys.ico"><h3>哔滴影视</h3>免费电影下载网站</a></li>
+                    <li><a href="http://assrt.net/"><img src="images/icon/assrt.ico"><h3>射手网</h3>影视字幕下载</a></li>
+					<li><a href="https://www.comicat.org/"><img src="images/icon/comicat.ico"><h3>漫喵动漫</h3>番剧下载</a></li>
+                    <li><a href="http://www.mvcat.com/"><img src="images/icon/mvcat.png"><h3>MVCAT</h3>电影推荐、影视信息综合搜索平台。</a></li>
+                </ul>
+            </div>
+
+			<div class="link-panel">
+                <div class="panel-heading">
+                    <b>资料</b>
+                </div>
+                <ul class="tile">
+                    <li><a href="https://www.ageeye.cn/"><img src="images/icon/ageeye.png"><h3>发现中国</h3>在线地图生成，各种历史地图、武侠小说地图资料。</a></li>
+                    <li><a href="https://www.jinyongwang.net/"><img src="images/icon/jinyongwang.png"><h3>金庸网</h3>最全的金庸小说资料站 金庸武侠小说全集。</a></li>
+                    <li><a href="https://www.gushiwen.org/"><img src="images/icon/gushiwen.ico"><h3>古诗文网</h3>诗词古文相关资料及译文。</a></li>
+                    <li><a href="https://sou-yun.cn/QueryCiTune.aspx"><img src="images/icon/sou-yun.png"><h3>搜韵</h3>词牌字数韵律检索</a></li>
+                    <li><a href="https://yayunla.com/"><img src="images/icon/yayun.png"><h3>押韵助手</h3>在线查询押韵的字、词、诗、歌</a></li>
+                    <li><a href="https://www.supfree.net/"><img src="images/icon/supfree.ico"><h3>在线查询网</h3>在线查询合集，英文名查询</a></li>
+                    <li><a href="https://www.zdic.net/"><img src="images/icon/zdic.png"><h3>汉典</h3>汉语词典，康熙字典，说文解字，音韵方言</a></li>
+                    <li><a href="https://www.shidianguji.com/"><img src="images/icon/shidianguji.jpg"><h3>识典古籍</h3>字节跳动旗下免费古文搜索站点</a></li>
+                    <li><a href="https://www.nlc.cn/web/index.shtml"><img src="images/icon/nlc.png"><h3>中国国家数字图书馆</h3>电子出版物资源，古籍、期刊、论文、报纸等</a></li>
+                    <li><a href="http://pewpewpew.work/"><img src="images/icon/gunworld.ico"><h3>枪炮世界</h3>世界各国轻兵器资料</a></li>
+                    <li><a href="https://www.cnmods.net/#/homePage"><img src="images/icon/modu.ico"><h3>魔都</h3>跑团剧本下载、资料库。</a></li>
+                    <li><a href="http://www.goddessfantasy.net/bbs/index.php"><img src="images/icon/goddessfantasy.png"><h3>純美蘋果園</h3>跑团交流、剧本、规则书下载。</a></li>
+					<li><a href="http://scp-wiki-cn.wikidot.com/scp-series"><img src="images/icon/scp.png"><h3>SCP基金会</h3>SCP项目系列档案馆。</a></li>
+					<li><a href="https://wiki.biligame.com/wiki/"><img src="images/icon/bilibili.ico"><h3>BWIKI</h3>哔哩哔哩游戏WIKI平台</a></li>
+                    <li><a href="https://www.gamekee.com/wikis"><img src="images/icon/gamekee.ico"><h3>GameKee</h3>GameKee的wiki专栏</a></li>
+					<li><a href="https://bbs.mihoyo.com/sr/wiki/?bbs_presentation_style=no_header"><img src="images/icon/miHoYo.png"><h3>米游社·崩坏：星穹铁道 WIKI</h3>崩坏：星穹铁道 游戏WIKI平台</a></li>
+					<li><a href="https://www.cthulhuclub.com/"><img src="images/icon/logo-cthulhu.png"><h3>BWIKI</h3>克苏鲁公社</a></li>
+					<li><a href="https://www.cbaigui.com/"><img src="images/icon/baigui.ico"><h3>纪妖</h3>收录中华上下具有历史意义的怪力乱神文化，包括但不仅限于妖，怪，神，魔，鬼，精，仙等，带你了解古今中外不同的文化知识。</a></li>
+					<li><a href="https://noirphoenix.studio"><img src="images/icon/FND.png"><h3>朱雀青龙</h3>玄凤工作室朱雀青龙官网</a></li>
+                    <li><a href="https://www.iyingdi.com/"><img src="images/icon/iyingdi.png"><h3>旅法师营地</h3>旅法师营地是有温度的玩家聚集地。在这里你可以看到各种游戏内容，包括炉石传说、万智牌、月圆之夜、宝可梦、幻兽帕鲁、影之诗、博德之门3等游戏的资讯，超专业的攻略，超有趣的故事，超好用的工具。</a></li>
+                </ul>
+            </div>
+
+            <div class="link-panel">
+                <div class="panel-heading">
+                    <b>贴吧</b>
+                </div>
+                <ul class="small">
+                    <li><a href="https://tieba.baidu.com/f?kw=%BD%A3%CD%F83"><img src="images/icon/tieba.png">剑网3吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?ie=utf-8&kw=%E6%B1%89%E5%AE%B6%E6%9D%BE%E9%BC%A0"><img src="images/icon/tieba.png">汉家松鼠吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%D7%C0%D3%CE"><img src="images/icon/tieba.png">桌游吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?ie=utf-8&kw=%E9%9A%90%E7%A7%98%E4%B8%96%E7%95%8C&fr=search"><img src="images/icon/tieba.png">隐秘世界吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%C7%B9%C5%DA%CA%C0%BD%E7"><img src="images/icon/tieba.png">强暴师姐吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=terraria&fr=home"><img src="images/icon/tieba.png">泰拉瑞亚吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%E5%8F%A4%E8%A3%85cos&fr=home"><img src="images/icon/tieba.png">古装cos吧</a></li>
+                    <li><a href="http://tieba.baidu.com/f?kw=%B9%C5%BD%A3%C6%E6%CC%B7%CD%F8%C2%E7%B0%E6&fr=ala0&tpl=5"><img src="images/icon/tieba.png">古剑ol吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?ie=utf-8&kw=%E6%B2%B3%E6%B4%9B%E7%BE%A4%E4%BE%A0%E4%BC%A0"><img src="images/icon/tieba.png">河洛群侠传吧</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%B7%C2%BF%A8%CC%EC%BF%D5&fr=ala0&tpl=5"><img src="images/icon/tieba.png">仿卡天空吧</a></li>
+                    <li><a href="https://tieba.baidu.com/p/6050540240?"><img src="images/icon/tieba.png">三国杀十周年皮肤大集合</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%C8%FD%B9%FA%C9%B1diy&fr=ala0&tpl=5"><img src="images/icon/tieba.png">三国杀DIY</a></li>
+                    <li><a href="https://tieba.baidu.com/f?kw=%C8%FD%B9%FA%C9%B1%C6%A4%B7%F4&fr=ala0&tpl=5"><img src="images/icon/tieba.png">三国杀皮肤</a></li>
+                </ul>
+            </div>
+
+            <div class="link-panel">
+                <div class="panel-heading">
+                    <b>购物</b>
+                </div>
+                <ul class="tile">
+		    		<li><a href="https://www.modian.com/"><img src="images/icon/modian.ico"><h3>摩点众筹</h3>桌游、出版物、手办等文化创意的众筹社区。</a></li>
+                    <li><a href="https://www.taobao.com/"><img src="images/icon/taobao.png"><h3>淘宝</h3>淘宝购物平台，点这里给马云爸爸送钱。</a></li>
+                    <li><a href="https://www.tmall.com/"><img src="images/icon/tianmao.png"><h3>天猫</h3>天猫商城，剁起手来比前面那位还凶。</a></li>
+                    <li><a href="https://www.jd.com/"><img src="images/icon/jd.png"><h3>京东</h3>京东网上商城，买电子产品选京东自营。</a></li>
+                    <li><a href="https://maoyan.com"><img src="images/icon/maoyan.png"><h3>猫眼电影</h3>猫眼电影是国内观众喜爱的观影平台，为您提供了在线购票服务。同时，猫眼电影还为您提供电影预告片、票房查询、电影排行榜、影视资讯等信息。</a></li>
+                    <li><a href="https://www.dianping.com/liuzhou"><img src="images/icon/dazhong.png"><h3>大众点评网</h3>吃喝玩乐优惠信息，提供美食餐厅、酒店旅游、电影票、家居装修、美容美发、运动健身等各类生活服务</a></li>
+                </ul>
+            </div>
+            <div class="link-panel">
+                <div class="panel-heading">
+                    <b>游戏</b>
+                </div>
+                <ul class="tile">
+                    <li><a href="https://store.steampowered.com/"><img src="images/icon/steam.ico"><h3>steam平台</h3>欢迎来到 Steam</a></li>
+                    <li><a href="https://store.epicgames.com/zh-CN/"><img src="images/icon/epic.ico"><h3>Epic</h3>欢迎来到Epic游戏商城！下载畅玩各类 PC 平台游戏。模组、DLC 和免费游戏等你来享！总有一款游戏适合你。</a></li>
+                    <li><a href="https://www.xdgame.com/"><img src="images/icon/xd.ico"><h3>XDGAME</h3>整合当下热门单机游戏，每日持续稳定更新。找游戏，上XDGAME！</a></li>
+                    <li><a href="https://www.xianyudanji.gg//"><img src="images/icon/xianyudj.png"><h3>咸鱼单机</h3>用户名loyo1，电脑单机游戏下载</a></li>
+                    <li><a href="https://www.zhuoyoux.com/"><img src="images/icon/aizhuoyou.ico"><h3>爱桌游</h3>桌游MOD，电子档素材下载。</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="footer">
+        </div>
+    </div>
+
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>
