@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机惩罚牌抽取器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121218;
+            color: #e8e8f0;
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+        .header-wrap {
+            position: relative;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #f0f0ff;
+        }
+        #ruleBtn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 6px 14px;
+            font-size: 15px;
+            border-radius: 8px;
+            border: 1px solid #444466;
+            background-color: #252538;
+            color:#c5c5e2;
+            cursor: pointer;
+        }
+        #ruleBtn:hover {
+            background-color:#33334e;
+        }
+        .card-box {
+            background-color: #1e1e2b;
+            border-radius: 16px;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            margin-bottom: 32px;
+            border: 1px solid #333344;
+            box-shadow: 0 8px 24px #00000060;
+        }
+        .card-text {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .tip-text {
+            color: #888899;
+        }
+        #drawBtn {
+            width: 100%;
+            padding: 16px 0;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            background-color: #5148ff;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #drawBtn:disabled {
+            background-color: #303042;
+            color: #777788;
+            cursor: not-allowed;
+        }
+
+        /*=====动画=====*/
+        @keyframes btnShake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes cardFlash {
+            0% { transform: scale(1); box-shadow: 0 8px 24px #00000060; }
+            30% { transform: scale(1.04); box-shadow: 0 0 0 4px #5148ff, 0 8px 30px #5148ff80; }
+            60% { transform: scale(1.02); box-shadow: 0 0 0 2px #5148ff, 0 8px 24px #00000060; }
+            100% { transform: scale(1); box-shadow: 0 8px 24px #00000060; }
+        }
+        @keyframes textFlip {
+            0% { opacity: 0; transform: translateY(8px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .flash { animation: cardFlash 0.6s ease; }
+        .shake { animation: btnShake 0.4s ease; }
+        .flip-text { animation: textFlip 0.25s ease; }
+
+        /*=====规则弹窗遮罩=====*/
+        .mask {
+            position: fixed;
+            inset:0;
+            background-color: rgba(0,0,0,0.65);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+            z-index:999;
+        }
+        .rule-modal {
+            background:#222233;
+            border-radius:14px;
+            max-width:420px;
+            width:100%;
+            padding:24px;
+            border:1px solid #404060;
+        }
+        .rule-modal h2 {
+            font-size:20px;
+            margin-bottom:16px;
+            color:#e2e2ff;
+        }
+        .rule-modal p {
+            line-height:1.7;
+            font-size:16px;
+            color:#ccccdd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-wrap">
+            <h1>随机惩罚牌</h1>
+            <button id="ruleBtn">规则</button>
+        </div>
+        <div class="card-box">
+            <div id="cardContent" class="card-text tip-text">点击下方按钮抽取惩罚</div>
+        </div>
+        <button id="drawBtn">抽取惩罚牌</button>
+    </div>
+
+    <!--规则弹窗遮罩层-->
+    <div id="mask" class="mask">
+        <div class="rule-modal">
+            <h2>游戏规则</h2>
+            <p>
+                1、每一轮先出完手牌的人获胜，抽取一张奖励牌。<br>
+                2、每一轮结束后，手上牌累计分数最多的玩家抽取一张惩罚牌。<br>
+                <br>
+            </p>
+            <h2>计分</h2>
+            <p>
+                1、数字1~9，各计1分；<br>
+                2、功能牌（反转、禁止）计10分；<br>
+                3、 +2牌计20分；<br>
+                4、 万能牌、+4万能牌计50分。<br>
+                <br>
+            </p>
+            <h2>奖励牌效果</h2>
+            <p>
+                1张：跳过本轮失败的抽取惩罚牌阶段；<br>
+                1张：指定一名玩家跟你一起接受惩罚；<br>
+                2张：免疫一次惩罚牌效果。
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // =========在这里自定义你的惩罚牌=========
+        const punishmentList = [
+            "拿起身边一样东西，用广告口吻说一段推销广告词。",
+            "由赢家指定一种动物，模仿10秒。",
+            "对着大家摆3个偶像营业姿势，并说：“谢谢大家一直以来的支持。",
+            "保持单脚站立姿势20秒，失败就要重来。",
+            "说一遍指定绕口令，说错就重新开始。",
+            "由大家说出5个词，然后分别说出这5个词的反义词。",
+            "选择一名玩家，用三个不同的理由夸对方。",
+            "用自己籍贯以外的方言说一句话，不少于10个字",
+            "模仿一个动漫角色的姿势说一句台词",
+            "假装自己是相亲节目的嘉宾，向另一名玩家介绍自己。",
+            "由其他玩家说3个词，你必须依次用表情表现出来。",
+            "用夹子音朗诵一段朋友圈鸡汤，完整读完。",
+            "模仿3种动物的叫声",
+            "接下来一整轮游戏，全程使用东北口音说话，否则将再次接受惩罚",
+            "表演一段浮夸偶像剧失恋崩溃大戏，20秒",
+            "站起来大声豪迈背诵一首古诗。",
+            "表演机器人走路，绕桌子走一圈。",
+            "假装自己是美食博主，激情介绍桌上任意一样食物。",
+            "模仿广播电台主持人，播报一条虚构搞笑新闻。",
+            "编造一个离谱但逻辑通顺的小故事。",
+            "说一段夸赢家的话，必须走心，不许敷衍。",
+            "讲一个冷笑话，必须把大家逗笑，冷到也算成功。",
+            "模仿微信里任意一个表情包。",
+            "选一个人，用“虽然……但是……”的句式夸他。",
+            "对随机选定的一个人说一句土味情话，必须直视对方眼睛。",
+            "用跑调的方式唱一首歌，至少包含3句歌词。",
+            "严肃正坐，将现场刚刚发生的任意一件小事，用新闻联播主持人的语气说出来。",
+            "选择场上一名玩家，严肃地夸奖他/她的一个“匪夷所思的优点”。",
+            "接下来一整轮游戏，说的话句尾都必须强制带上“喵~”",
+            "模仿企鹅摇摇摆摆走一圈。",
+            "学大猩猩捶胸顿足，绕场一圈。",
+            "学猫伸懒腰，发出“喵~”的长音。",
+            "做十个俯卧撑。",
+            "假装自己正走在狂风暴雨中，用极其夸张的肢体语言表演“伞被吹翻、人在风中凌乱”的情景。",
+            "对着桌上的任意一个物品进行一次深情告白。",
+            "模仿表情包里面一个动物的姿势，由其他玩家指定。",
+            "嘴里含水唱“一闪一闪亮晶晶，满天都是小星星。挂在天上放光明，好像许多小眼睛。",
+            "夸每位玩家一个优点，必须用四字成语，且不能重复。",
+            "扮演一个电影角色让大家猜，有人猜出来才算过关。",
+            "用诗歌朗涌的形式念一段歌词，至少5句以上。",
+            "打开抖音，模仿推荐里面的第一个视频。",
+            "做一个自认为最可爱的姿势，维持10秒。",
+            "30秒内报出10个菜名，否则再次接受惩罚。",
+            "选择场上一名玩家，你和他/她同时接受一个惩罚。",
+            "用方言说一段绕口令。"
+        ];
+
+        const drawBtn = document.getElementById('drawBtn');
+        const cardContent = document.getElementById('cardContent');
+        const coolDownSecond = 3;
+        let timer = null;
+
+        //规则弹窗
+        const ruleBtn = document.getElementById('ruleBtn');
+        const mask = document.getElementById('mask');
+        ruleBtn.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            mask.style.display = "flex";
+        })
+        //点击页面任意位置关闭弹窗
+        mask.addEventListener('click',()=>{
+            mask.style.display = "none";
+        })
+
+        drawBtn.addEventListener('click', () => {
+            drawBtn.classList.remove('shake');
+            void drawBtn.offsetWidth;
+            drawBtn.classList.add('shake');
+
+            cardContent.classList.remove('flash');
+            void cardContent.offsetWidth;
+            cardContent.classList.add('flash');
+
+            let rollCount = 0;
+            const rollTimes = 6;
+            const rollInterval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * punishmentList.length);
+                cardContent.textContent = punishmentList[randomIndex];
+                cardContent.classList.remove('flip-text');
+                void cardContent.offsetWidth;
+                cardContent.classList.add('flip-text');
+                rollCount++;
+
+                if (rollCount >= rollTimes) {
+                    clearInterval(rollInterval);
+                    const finalIndex = Math.floor(Math.random() * punishmentList.length);
+                    const finalItem = punishmentList[finalIndex];
+                    cardContent.textContent = finalItem;
+                    cardContent.classList.remove('tip-text');
+                }
+            }, 120);
+
+            drawBtn.disabled = true;
+            let remain = coolDownSecond;
+            drawBtn.textContent = `重新抽取(${remain}s)`;
+
+            timer = setInterval(() => {
+                remain--;
+                drawBtn.textContent = `重新抽取(${remain}s)`;
+                if (remain <= 0) {
+                    clearInterval(timer);
+                    drawBtn.disabled = false;
+                    drawBtn.textContent = "抽取惩罚牌";
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
