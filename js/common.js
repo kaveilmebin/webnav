@@ -3826,10 +3826,10 @@
     w.isIE6 = "undefined" != typeof __IE6;
     var fa = {
         sopt: {
-            baidu: ["\u767e\u5ea6", "http://www.baidu.com/s", "word", "tn:56060048_4_pg;ch:11"],
-            google: ["\u8c37\u6b4c", "http://www.google.com.hk/search", "q", "ie:utf-8;hl:zh-CN"],
-            sougou: ["\u641c\u72d7", "http://www.sogou.com/sogou", "query", "pid:sogou-site-664dd858db942cad;ie:utf8"],
-            taobao: ["\u6dd8\u5b9d", "http://search8.taobao.com/browse/search_auction.htm", "q", "pid:mm_26866744_3453767_13506237;search_type:auction;commend:all;at_topsearch:1;user_action:initiative;unid:21876;ie:gbk"]
+            baidu: ["\u767e\u5ea6", "https://www.baidu.com/s", "word", "tn:56060048_4_pg;ch:11"],
+            google: ["\u8c37\u6b4c", "https://www.google.com.hk/search", "q", "ie:utf-8;hl:zh-CN"],
+            sougou: ["\u641c\u72d7", "https://www.sogou.com/sogou", "query", "pid:sogou-site-664dd858db942cad;ie:utf8"],
+            bing: ["\u5fc5\u5e94", "https://cn.bing.com/search", "q", "setlang:zh-CN"]
         },
         init: function() {
             m.each("transform transition animation perspective border-image border-radius box-shadow background-size text-shadow min-height".split(" "),
